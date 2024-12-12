@@ -1,0 +1,41 @@
+The solution involves increasing the specificity of the `.nav ul li:hover` selector to override the more specific `a:hover` selector.  This can be achieved by adding a more specific selector.
+
+```css
+.nav ul li {
+  background-color: white;
+}
+
+.nav ul li:hover {
+  background-color: lightblue !important; /* Added !important to enforce the rule */
+}
+
+.nav ul li a {
+  color: black;
+}
+
+.nav ul li a:hover {
+  color: darkblue;
+}
+```
+
+Alternatively, you can refactor the CSS to avoid the specificity conflict entirely, for example by using a more specific selector:
+
+```css
+.nav ul li {
+  background-color: white;
+}
+
+.nav ul li:hover {
+  background-color: lightblue;
+}
+
+.nav ul li a {
+  color: black;
+}
+
+.nav ul li a:hover {
+  color: darkblue;
+  /* No need for !important */
+}
+```
+This approach ensures that each :hover style applies to its intended element without conflicts.
