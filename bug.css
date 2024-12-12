@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an unusual error related to the specificity of CSS selectors and how they interact with the :hover pseudo-class.  The intent is to change the background color of the list items on hover, but the hover state is not being applied correctly.
+
+```css
+.nav ul li {
+  background-color: white;
+}
+
+.nav ul li:hover {
+  background-color: lightblue;
+}
+
+.nav ul li a {
+  color: black;
+}
+
+.nav ul li a:hover {
+  color: darkblue;
+}
+```
+
+The problem arises because the `a` element's :hover state is inheriting the specificity of its parent, and the specificity is higher than just `.nav ul li:hover` causing the `background-color` change to be overridden.
